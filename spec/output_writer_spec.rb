@@ -1,4 +1,4 @@
-require_relative '../output_writer'
+require_relative '../lib/output_writer'
 
 RSpec.describe OutputWriter do
   describe '.write' do

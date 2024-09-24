@@ -1,6 +1,6 @@
-require_relative 'token_top_up_processor'
-require_relative 'data_loader'
-require_relative 'output_writer'
+require_relative './lib/token_top_up_processor'
+require_relative './lib/data_loader'
+require_relative './lib/output_writer'
 
 require 'fileutils'
 
@@ -18,7 +18,7 @@ begin
   end
 
   # Process data
-  processor = TokenTopUpProcessor.new(users_data:, companies_data:)
+  processor = TokenTopUpProcessor.new(users_data, companies_data)
   output = processor.process
 
   # Write output

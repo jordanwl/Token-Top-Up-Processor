@@ -1,4 +1,4 @@
-require_relative '../data_loader'
+require_relative '../lib/data_loader'
 
 RSpec.describe DataLoader do
   describe '.validate_user' do

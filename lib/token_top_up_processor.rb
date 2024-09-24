@@ -6,7 +6,7 @@ class TokenTopUpProcessor
   # Initialize the processor with user and company data
   # @param users_data [Array<Hash>] The raw user data from the JSON file
   # @param companies_data [Array<Hash>] The raw company data from the JSON file
-  def initialize(users_data:, companies_data:)
+  def initialize(users_data, companies_data)
     @users_data = users_data
     @companies_data = companies_data
   end
@@ -47,7 +47,7 @@ class TokenTopUpProcessor
 
     emailed_users, not_emailed_users = categorize_users(company, company_users)
     total_top_up = company.top_up * company_users.count
-    
+
     generate_company_output(company, emailed_users, not_emailed_users, total_top_up)
   end
 

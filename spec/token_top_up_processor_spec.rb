@@ -1,4 +1,4 @@
-require_relative '../token_top_up_processor'
+require_relative '../lib/token_top_up_processor'
 
 RSpec.describe TokenTopUpProcessor do
   let(:users_data) do
@@ -16,7 +16,7 @@ RSpec.describe TokenTopUpProcessor do
     ]
   end
 
-  let(:processor) { TokenTopUpProcessor.new(users_data:, companies_data:) }
+  let(:processor) { TokenTopUpProcessor.new(users_data, companies_data) }
 
   describe '#process' do
     it 'generates the correct output' do
