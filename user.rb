@@ -18,11 +18,4 @@ class User
   def can_receive_email?
     @email_status
   end
-
-  # Increase the user's token balance by the given amount
-  # @param amount [Integer] The amount to increase the token balance by
-  # @return [Integer] The new token balance
-  def top_up(amount)
-    @tokens += amount
-  end
 end

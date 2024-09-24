@@ -14,8 +14,10 @@ class TokenTopUpProcessor
   # Process the raw data and generate the formatted output
   # @return [String] The formatted output string
   def process
-    users = sorted_users
-    companies = sorted_companies
+    companies = create_companies.sort_by(&:id)
+
+    # users will be sorted by last name, first_name in categorize_users
+    users = create_users
 
     companies.map { |company| generate_company_report(company, users) }
              .compact
@@ -24,16 +26,16 @@ class TokenTopUpProcessor
 
   private
 
-  # Create User objects from raw user data and sort them
-  # @return [Array<User>] Sorted array of User objects
-  def sorted_users
-    @users_data.map { |user_data| User.new(user_data) }.sort_by(&:last_name)
+  # Create User objects from raw user data
+  # @return [Array<User>] Array of User objects
+  def create_users
+    @users_data.map { |user_data| User.new(user_data) }
   end
 
   # Create Company objects from raw company data and sort them
-  # @return [Array<Company>] Sorted array of Company objects
-  def sorted_companies
-    @companies_data.map { |company_data| Company.new(company_data) }.sort_by(&:id)
+  # @return [Array<Company>] Array of Company objects
+  def create_companies
+    @companies_data.map { |company_data| Company.new(company_data) }
   end
 
   # Generate a report for a single company and its users
