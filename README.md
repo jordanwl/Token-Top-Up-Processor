@@ -30,7 +30,7 @@ The script will:
 After running the script, you can find the results in `output/output.txt`. This file will contain:
 - A list of companies and their users
 - Token top-up information for each user
-- Email status for users (whether an email would be sent or not)
+- Email status for users
 - Total amount of top-ups for each company
 
 ## Running Tests
