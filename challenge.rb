@@ -2,6 +2,8 @@ require_relative 'token_top_up_processor'
 require_relative 'data_loader'
 require_relative 'output_writer'
 
+require 'fileutils'
+
 begin
   # Load and validate data
   users_data, user_errors = DataLoader.load_json('input/users.json')
@@ -20,6 +22,7 @@ begin
   output = processor.process
 
   # Write output
+  FileUtils.mkdir_p('output')
   OutputWriter.write(output, 'output/output.txt')
 
   puts 'Processing complete. Please check output/output.txt for results.'
