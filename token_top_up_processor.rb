@@ -46,8 +46,8 @@ class TokenTopUpProcessor
     return nil if company_users.empty?
 
     emailed_users, not_emailed_users = categorize_users(company, company_users)
-    total_top_up = company_users.sum { |_user| company.top_up }
-
+    total_top_up = company.top_up * company_users.count
+    
     generate_company_output(company, emailed_users, not_emailed_users, total_top_up)
   end
 
