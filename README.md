@@ -10,12 +10,7 @@ This Ruby script processes user and company data from JSON files, applies token 
    cd token-top-up-processor
    ```
 
-2. Install dependencies:
-   ```
-   bundle install
-   ```
-
-3. Copy your `users.json` and `companies.json` files to the `input` folder.
+2. Copy your `users.json` and `companies.json` files to the `input` folder.
 
 ## Running the Script
 
@@ -37,6 +32,20 @@ After running the script, you can find the results in `output/output.txt`. This 
 - Token top-up information for each user
 - Email status for users (whether an email would be sent or not)
 - Total amount of top-ups for each company
+
+## Running Tests
+
+To run the test suite:
+
+1. Install dependencies:
+   ```
+   bundle install
+   ```
+
+2. Run rspec:
+   ```
+   rspec
+   ```
 
 ## Troubleshooting
 
