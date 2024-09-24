@@ -10,7 +10,7 @@ This Ruby script processes user and company data from JSON files, applies token 
    cd token-top-up-processor
    ```
 
-2. Copy your `users.json` and `companies.json` files to the `input` folder.
+2. Copy your `users.json` and `companies.json` files to the `input` folder (sample files have been included).
 
 ## Running the Script
 
