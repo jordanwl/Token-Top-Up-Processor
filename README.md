@@ -6,7 +6,7 @@ This Ruby script processes user and company data from JSON files, applies token 
 
 1. Clone this repository:
    ```
-   git clone https://github.com/your-username/token-top-up-processor.git
+   git clone https://github.com/jordanwl/token-top-up-processor.git
    cd token-top-up-processor
    ```
 
